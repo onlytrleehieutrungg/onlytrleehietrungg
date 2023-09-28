@@ -1,8 +1,10 @@
-import { motion } from "framer-motion";
 import React, { useState } from "react";
-
 import ScrollingContainer from "react-page-scroll";
 import PageIndicatorContainer from "../../components/PageIndicator/PageIndicator";
+import PageFour from "../../components/portfolio/pageFour";
+import PageOne from "../../components/portfolio/pageOne";
+import PageThree from "../../components/portfolio/pageThree";
+import PageTwo from "../../components/portfolio/pageTwo";
 
 const bgColors = [
   "rgb(29 78 216)",
@@ -17,39 +19,32 @@ const DemoWithPageIndicators = () => {
   const [currentPage, setCurrentPage] = useState(0);
 
   return (
-    <motion.div
-      className="title"
-      animate={{
-        backgroundColor: bgColors[currentPage],
-      }}
-    >
-      <PageIndicatorContainer pagesNumber={6} selectedPage={currentPage} />
+    <div>
+      <video
+        className="video-bg"
+        src="https://video.wixstatic.com/video/fe5385_9f011cd1aa2a4bbfa6903ac7a1804dde/1080p/mp4/file.mp4"
+        autoPlay
+        loop
+        muted
+      />
+      <PageIndicatorContainer pagesNumber={4} selectedPage={currentPage} />
       <ScrollingContainer
         onScrollStart={({ targetIndex }) => setCurrentPage(targetIndex)}
       >
         <div className="page">
-          <span>Page 1</span>
+          <PageOne />
         </div>
         <div className="page">
-          <span>Page 2</span>
+          <PageTwo />
         </div>
         <div className="page">
-          <span>Page 3</span>
-        </div>
-        <div
-          className="page"
-          style={{ height: "50vh", backgroundColor: "yellowgreen" }}
-        >
-          <span>Page 4</span>
+          <PageThree />
         </div>
         <div className="page">
-          <span>Page 5</span>
-        </div>
-        <div className="page">
-          <span>Page 6</span>
+          <PageFour />
         </div>
       </ScrollingContainer>
-    </motion.div>
+    </div>
   );
 };
 

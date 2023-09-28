@@ -1,21 +1,44 @@
+import FacebookIcon from "@mui/icons-material/Facebook";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import { IconButton } from "@mui/material";
 import React from "react";
 import {
   createBrowserRouter,
-  NavLink,
+  Link,
   Outlet,
-  RouterProvider
+  RouterProvider,
 } from "react-router-dom";
 import "./index.css";
 import DemoWithPageIndicators from "./pages/portfolio/DemoWithPageIndicators";
-
-
 const router = createBrowserRouter([
   {
     path: "/",
     element: (
       <div>
         <div className="header">
-          <NavLink
+          <IconButton
+            component={Link}
+            to="https://github.com/onlytrleehieutrungg"
+            sx={{ color: "white" }}
+          >
+            <GitHubIcon fontSize="large" />
+          </IconButton>
+          <IconButton
+            component={Link}
+            to="https://www.facebook.com/rtlee2101.bido"
+            sx={{ color: "white" }}
+          >
+            <FacebookIcon fontSize="large" />
+          </IconButton>
+          <IconButton
+            component={Link}
+            to="https://www.linkedin.com/in/rtlee2101/"
+            sx={{ color: "white" }}
+          >
+            <LinkedInIcon fontSize="large" />
+          </IconButton>
+          {/* <NavLink
             to="/"
             className={({ isActive }) => (isActive ? "active" : "")}
           >
@@ -26,7 +49,7 @@ const router = createBrowserRouter([
             to="/demo2"
           >
             test 2
-          </NavLink>
+          </NavLink> */}
         </div>
         <Outlet />
       </div>

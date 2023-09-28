@@ -16,16 +16,30 @@ code {
 * {
   box-sizing: border-box;
 }
-
+.video-bg {
+  width: 100vw; /* Adjust the width as needed */
+  height: 100vh; /* Maintain aspect ratio */
+  object-fit: cover; /* Cover the entire container */
+  position: fixed; /* Fixed position to cover the viewport */
+  top: 0;
+  left: 0;
+  z-index: -1; /* Place it behind other content */
+}
+.meimage{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+  height: 100%;
+  }
 .header {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100vw;
   display: flex;
   z-index: 999;
   padding: 10px;
-  padding-left: 120px;
+  padding-left:90em;
   flex-wrap: wrap;
   box-sizing: border-box;
 }
@@ -69,7 +83,6 @@ code {
   width: 100vw;
   height: 100vh;
   display: flex;
-  flex-shrink: 0;
 }
 
 .small-page {
@@ -77,7 +90,7 @@ code {
   background-color: yellowgreen;
 }
 
-.page span {
+.page div {
   margin: auto;
 }
 
@@ -119,19 +132,6 @@ code {
   .title {
     font-size: 4rem;
   }
-}
-
-.link-to-github {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  padding: 10px;
-  padding-right: 20px;
-  background: white;
-  display: flex;
-  text-decoration: none;
-  color: black;
-  border-radius: 0 10px px 0 0;
 }
 
 @media (max-width: 540px) {
